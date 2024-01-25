@@ -68,15 +68,14 @@ header {
 }
 
 header nav {
-  width: auto;
   display: flex;
+  gap: 0 5vw;
   margin-top: 0.5rem;
 }
 
 header nav a {
-  margin-left: 2rem;
   font-family: "Grape Nuts", cursive;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: var(--primary-hover);
 }
 
@@ -88,6 +87,13 @@ header nav a:last-child {
 header nav a:hover {
   color: var(--primary-hover);
   text-decoration: underline;
+}
+
+header nav a:hover:last-child {
+  text-decoration: none;
+}
+header nav a:focus:last-child {
+  background-color: transparent;
 }
 
 main {
