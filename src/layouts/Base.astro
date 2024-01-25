@@ -1,0 +1,45 @@
+---
+import "../styles/pico.min.css";
+import "../styles/main.css";
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <slot name="head" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h2>Larry LW Chan: {title}</h2>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/about/">About</a>
+          <a href="/blog/">Blog</a>
+        </nav>
+      </header>
+      <main>
+        <article>
+          <!-- your content is injected here -->
+          <slot>
+            <p>
+              This is my fallback content, if there is no child passed into slot
+            </p>
+          </slot>
+        </article>
+      </main>
+      <footer>
+        <p>
+          <small>
+            &copy; 2024 Larry LW Chan. All rights reserved.{" "}
+          </small>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
