@@ -76,22 +76,17 @@ header nav a {
   padding: 0px;
   margin-left: 3rem;
   font-weight: 500;
-  color: #fff;
+  color: var(--primary-hover);
 }
 
 header nav a:hover {
-  color: var(--color);
+  color: var(--primary-hover);
 }
 
 main {
   border-top: 1px solid var(--primary);
   border-bottom: 1px solid var(--primary);
   margin: 0 0 1.2rem 0;
-}
-
-article {
-  padding: 0;
-  background: none;
 }
 
 footer {
