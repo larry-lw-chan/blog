@@ -1,0 +1,37 @@
+---
+const platform = "github";
+const username = "withastro";
+---
+
+<footer>
+  <p>
+    <small> &copy; 2024 Larry LW Chan. All rights reserved. </small>
+  </p>
+  <div class="social">
+    <a href="https://github.com/larry-lw-chan" aria-label="github">
+      <box-icon type="logo" name="github"></box-icon>
+    </a>
+    <a href="https://www.linkedin.com/in/larrylwchan/" aria-label="linkedin">
+      <box-icon type="logo" name="linkedin-square"></box-icon>
+    </a>
+  </div>
+</footer>
+
+<script>
+  // Sets custom color for box-icons
+  const style = getComputedStyle(document.body);
+  const color = style.getPropertyValue("--color");
+  const boxIcons = document.querySelectorAll("box-icon");
+  boxIcons.forEach((boxIcon) => {
+    boxIcon.setAttribute("color", color);
+  });
+</script>
+
+<style slot="head">
+  footer p {
+    font-weight: 500;
+  }
+  footer .social a:hover {
+    text-decoration: none;
+  }
+</style>

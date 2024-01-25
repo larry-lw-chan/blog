@@ -22,6 +22,8 @@ const skills = [
 const happy = true;
 const finished = false;
 const goal = 3;
+
+const white = "#fff";
 ---
 
 <Base title="About">
@@ -59,7 +61,7 @@ const goal = 3;
   }
 </Base>
 
-<style slot="head">
+<style slot="head" define:vars={{ white }}>
   .skills {
     display: flex;
     justify-content: space-between;
