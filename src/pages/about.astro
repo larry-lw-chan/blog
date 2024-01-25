@@ -38,8 +38,14 @@ const goal = 3;
     }
   </ul>
   <p>My skills are:</p>
-  <ul>
-    {skills.map((skill) => <li class="skill">{skill}</li>)}
+  <ul class="skills">
+    {
+      skills.map((skill) => (
+        <li>
+          <mark>{skill}</mark>
+        </li>
+      ))
+    }
   </ul>
 
   {happy && <p>I am happy to be learning Astro!</p>}
@@ -54,8 +60,11 @@ const goal = 3;
 </Base>
 
 <style slot="head">
-  .skill {
-    color: green;
-    font-weight: bold;
+  .skills {
+    display: flex;
+    justify-content: space-between;
+  }
+  .skills li {
+    list-style: none;
   }
 </style>

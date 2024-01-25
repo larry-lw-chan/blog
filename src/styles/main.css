@@ -1,9 +1,99 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap");
 
-body {
-    font-family: 'Roboto', sans-serif;
+/* Orange Light scheme (Default) */
+/* Can be forced with data-theme="light" */
+[data-theme="light"],
+:root:not([data-theme="dark"]) {
+  --primary: #fb8c00;
+  --primary-hover: #f57c00;
+  --primary-focus: rgba(251, 140, 0, 0.125);
+  --primary-inverse: #fff;
+}
+
+/* Orange Dark scheme (Auto) */
+/* Automatically enabled if user has Dark mode enabled */
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --primary: #fb8c00;
+    --primary-hover: #ff9800;
+    --primary-focus: rgba(251, 140, 0, 0.25);
+    --primary-inverse: #fff;
+  }
+}
+
+/* Orange Dark scheme (Forced) */
+/* Enabled if forced with data-theme="dark" */
+[data-theme="dark"] {
+  --primary: #fb8c00;
+  --primary-hover: #ff9800;
+  --primary-focus: rgba(251, 140, 0, 0.25);
+  --primary-inverse: #fff;
+}
+
+/* Orange (Common styles) */
+:root {
+  --form-element-active-border-color: var(--primary);
+  --form-element-focus-color: var(--primary-focus);
+  --switch-color: var(--primary-inverse);
+  --switch-checked-background-color: var(--primary);
+}
+
+address,
+blockquote,
+dl,
+figure,
+form,
+ol,
+p,
+pre,
+table,
+ul {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 0;
+}
+
+header {
+  height: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav {
+  width: auto;
+  display: flex;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+header nav a {
+  padding: 0px;
+  margin-left: 3rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+header nav a:hover {
+  color: var(--color);
+}
+
+main {
+  border-top: 1px solid var(--primary);
+  border-bottom: 1px solid var(--primary);
+  margin: 0 0 1.2rem 0;
+}
+
+article {
+  padding: 0;
+  background: none;
 }
 
 footer {
-    text-align: center;
+  text-align: center;
 }

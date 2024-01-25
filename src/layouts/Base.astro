@@ -16,7 +16,7 @@ const { title } = Astro.props;
   <body>
     <div class="container">
       <header>
-        <h2>Larry LW Chan: {title}</h2>
+        <h3>Larry Chan</h3>
         <nav>
           <a href="/">Home</a>
           <a href="/about/">About</a>
@@ -26,6 +26,7 @@ const { title } = Astro.props;
       </header>
       <main>
         <article>
+          <h2>{title}</h2>
           <!-- your content is injected here -->
           <slot>
             <p>
