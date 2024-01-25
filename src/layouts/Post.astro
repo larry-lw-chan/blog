@@ -1,0 +1,39 @@
+---
+import Base from "../layouts/Base.astro";
+const { frontmatter } = Astro.props;
+---
+
+<Base>
+  <div class="frontmatter">
+    <h1>{frontmatter.title}</h1>
+    <p>{frontmatter.pubDate.slice(0, 10)}</p>
+  </div>
+  <div class="post">
+    <slot />
+  </div>
+  <div class="tags">
+    <h3>Tags</h3>
+    <ul>
+      {
+        frontmatter.tags.map((tag: string) => (
+          <li>
+            <mark>{tag}</mark>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Base>
+
+<style slot="head">
+  .tags ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 1rem;
+    margin-top: 0.6rem;
+    padding-left: 0;
+  }
+  .tags li {
+    list-style: none;
+  }
+</style>
