@@ -71,7 +71,6 @@ header nav {
   width: auto;
   display: flex;
   margin-top: 0.5rem;
-  margin-right: 0.5rem;
 }
 
 header nav a {
@@ -79,6 +78,11 @@ header nav a {
   font-family: "Grape Nuts", cursive;
   font-size: 1.2rem;
   color: var(--primary-hover);
+}
+
+header nav a:last-child {
+  position: relative;
+  top: 0.25rem;
 }
 
 header nav a:hover {
@@ -93,5 +97,6 @@ main {
 }
 
 footer {
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
 }
