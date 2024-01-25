@@ -69,20 +69,32 @@ header {
   position: relative;
 }
 
-/* Navigation Styling */
+/* Dropdown Menu Styling */
 details[role="list"] li {
   color: var(--primary);
 }
 
-details summary[role="button"] {
-  --background-color: var(--primary-focus);
-}
-
-details summary[role="button"]:hover,
-details summary[role="button"]:focus {
+/* Day mode */
+html[data-theme="light"] details summary[role="button"] {
   --background-color: var(--primary);
 }
 
+html[data-theme="light"] details summary[role="button"]:hover,
+html[data-theme="light"] details summary[role="button"]:focus {
+  --background-color: var(--primary-hover);
+}
+
+/* Night mode */
+html[data-theme="dark"] details summary[role="button"] {
+  --background-color: var(--primary-focus);
+}
+
+html[data-theme="dark"] details summary[role="button"]:hover,
+html[data-theme="dark"] details summary[role="button"]:focus {
+  --background-color: var(--primary);
+}
+
+/* Navigation Link Styling */
 .nav-links {
   display: none;
   margin: 0 4rem 0 0;
