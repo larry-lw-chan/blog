@@ -1,5 +1,5 @@
 ---
-import Navigation from "../components/Navigation.astro";
+import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 import "../styles/pico.min.css";
@@ -18,10 +18,7 @@ const { title } = Astro.props;
   </head>
   <body>
     <div class="container">
-      <header>
-        <h1>Larry Chan</h1>
-        <Navigation />
-      </header>
+      <Header />
       <main>
         <article>
           <h2>{title}</h2>

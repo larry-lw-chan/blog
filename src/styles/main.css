@@ -61,41 +61,73 @@ h3 {
 }
 
 header {
-  height: 6rem;
+  min-height: 3rem;
+  padding: 1rem 0;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-}
-
-header nav {
-  display: flex;
-  gap: 0 5vw;
-  margin-top: 0.5rem;
-}
-
-header nav a {
-  font-family: "Grape Nuts", cursive;
-  font-size: 1.4rem;
-  color: var(--primary-hover);
-}
-
-header nav a:last-child {
+  align-content: center;
   position: relative;
-  top: 0.25rem;
 }
 
-header nav a:hover {
+/* Navigation Styling */
+details[role="list"] li {
+  color: var(--primary);
+}
+
+details summary[role="button"] {
+  --background-color: var(--primary-focus);
+}
+
+details summary[role="button"]:hover,
+details summary[role="button"]:focus {
+  --background-color: var(--primary);
+}
+
+.nav-links {
+  display: none;
+  margin: 0 4rem 0 0;
+}
+
+.nav-links li {
+  font-family: "Grape Nuts", cursive;
+  font-size: 1.8rem;
+  color: var(--primary-hover);
+  list-style: none;
+  text-align: center;
+}
+
+.nav-links a:hover {
   color: var(--primary-hover);
   text-decoration: underline;
 }
 
-header nav a:hover:last-child {
-  text-decoration: none;
-}
-header nav a:focus:last-child {
-  background-color: transparent;
+a[data-theme-switcher] {
+  position: absolute;
+  right: 9rem;
+  top: 2rem;
 }
 
+@media screen and (min-width: 768px) {
+  details[role="list"] {
+    display: none;
+  }
+
+  .nav-links {
+    margin-top: 0.6rem;
+    display: flex;
+    gap: 0 3rem;
+    justify-content: center;
+  }
+
+  .nav-links li {
+    font-size: 1.4rem;
+  }
+  a[data-theme-switcher] {
+    right: 0;
+  }
+}
+
+/* Main Styling */
 main {
   border-top: 1px solid var(--primary);
   border-bottom: 1px solid var(--primary);
