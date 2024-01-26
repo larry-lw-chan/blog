@@ -1,5 +1,8 @@
 ---
 import Navigation from "./Navigation.astro";
+import ThemeSwitch from "./ThemeSwitch.astro";
+
+import "../styles/navigation.css";
 ---
 
 <header>
@@ -10,5 +13,5 @@ import Navigation from "./Navigation.astro";
     <summary aria-haspopup="listbox" role="button">Menu</summary>
     <Navigation />
   </details>
-  <a href="#" data-theme-switcher="light">🔆</a>
+  <ThemeSwitch />
 </header>

@@ -1,0 +1,26 @@
+<a href="#" data-theme-switcher="light">🔆</a>
+
+<style>
+  /* Day mode */
+  html[data-theme="light"] details summary[role="button"] {
+    --background-color: var(--primary);
+  }
+
+  html[data-theme="light"] details summary[role="button"]:hover,
+  html[data-theme="light"] details summary[role="button"]:focus {
+    --background-color: var(--primary-hover);
+  }
+
+  /* Night mode */
+  html[data-theme="dark"] details summary[role="button"] {
+    --background-color: var(--primary-focus);
+  }
+
+  html[data-theme="dark"] details summary[role="button"]:hover,
+  html[data-theme="dark"] details summary[role="button"]:focus {
+    --background-color: var(--primary);
+  }
+</style>
+
+<script src="../scripts/minimal-theme-custom.js"></script>
+<script src="../scripts/minimal-theme-switcher.js"></script>
