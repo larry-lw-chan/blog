@@ -1,0 +1,37 @@
+---
+const { tags } = Astro.props;
+---
+
+<ul class="tags">
+  {
+    tags.map((tag: string) => (
+      <li class="tag">
+        <a href={`/tags/${tag}`}>
+          <mark>{tag}</mark>
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  ul.tags {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    list-style: none;
+    margin: 0 1rem 1rem 0;
+  }
+
+  .tag a {
+    text-decoration: none;
+  }
+
+  .tag mark:hover {
+    background-color: var(--primary);
+  }
+</style>

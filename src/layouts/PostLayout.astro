@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import Tags from "../components/Tags.astro";
 const { frontmatter } = Astro.props;
 ---
 
@@ -12,29 +13,8 @@ const { frontmatter } = Astro.props;
   <div class="post">
     <slot />
   </div>
-  <div class="tags">
+  <div class="taglist">
     <h3>Tags</h3>
-    <ul>
-      {
-        frontmatter.tags.map((tag: string) => (
-          <li>
-            <mark>{tag}</mark>
-          </li>
-        ))
-      }
-    </ul>
+    <Tags tags={frontmatter.tags} />
   </div>
 </BaseLayout>
-
-<style slot="head">
-  .tags ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0 1rem;
-    margin-top: 0.6rem;
-    padding-left: 0;
-  }
-  .tags li {
-    list-style: none;
-  }
-</style>
