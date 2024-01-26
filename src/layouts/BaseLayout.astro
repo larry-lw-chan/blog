@@ -1,9 +1,8 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-
 import "../styles/pico.min.css";
-import "../styles/main.css";
+import "../styles/global.css";
 
 const { title } = Astro.props;
 ---
@@ -22,16 +21,16 @@ const { title } = Astro.props;
       <main>
         <article>
           <h2>{title}</h2>
-          <!-- your content is injected here -->
           <slot>
-            <p>
-              This is my fallback content, if there is no child passed into slot
-            </p>
+            <!-- your content is injected here -->
+            <p>This is my fallback content.</p>
           </slot>
         </article>
       </main>
       <Footer />
     </div>
   </body>
-  <script src="../scripts/boxicons.js"></script>
 </html>
+
+<script src="../scripts/global.js"></script>
+<script src="../scripts/boxicons.js"></script>

@@ -1,7 +1,44 @@
 ---
-const { title, url } = Astro.props;
+const { title, url, pubDate, description } = Astro.props;
+
+const dateOptions: object = {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
+
+const formattedDate = new Date(pubDate).toLocaleDateString(
+  "en-US",
+  dateOptions,
+);
 ---
 
 <li>
-  <a href={url}>{title}</a>
+  <h3><a href={url}>{title}</a></h3>
+  <div class="date">
+    <box-icon name="calendar-alt"></box-icon>
+    <span>{formattedDate}</span>
+  </div>
+  <div class="description">{description}</div>
 </li>
+
+<style>
+  li {
+    list-style: none;
+    margin-bottom: 2rem;
+  }
+  h6 {
+    margin-bottom: 0;
+    font-weight: 500;
+  }
+  .date {
+    position: relative;
+    margin-bottom: 0.3rem;
+  }
+  .date span {
+    position: absolute;
+    font-size: 0.8rem;
+    left: 1.6rem;
+    top: 0.1rem;
+  }
+</style>

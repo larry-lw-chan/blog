@@ -2,13 +2,13 @@
 import Navigation from "./Navigation.astro";
 import ThemeSwitch from "./ThemeSwitch.astro";
 
-import "../styles/navigation.css";
+import "../styles/header.css";
 ---
 
 <header>
-  <h1>Larry Chan</h1>
-  <Navigation />
+  <a href="/" aria-label="Homepage link"><h1>Larry Chan</h1></a>
 
+  <Navigation />
   <details role="list">
     <summary aria-haspopup="listbox" role="button">Menu</summary>
     <Navigation />

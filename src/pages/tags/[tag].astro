@@ -7,6 +7,9 @@ interface FilteredPost {
   frontmatter: {
     title: unknown;
     tags: string[];
+    pubDate: Date;
+    author: string;
+    description: string;
   };
 }
 
@@ -36,7 +39,14 @@ const { posts } = Astro.props;
   <ul>
     {
       posts.map((post: FilteredPost) => (
-        <BlogPost url={post.url} title={post.frontmatter.title} />
+        <>
+          <BlogPost
+            url={post.url}
+            title={post.frontmatter.title}
+            pubDate={post.frontmatter.pubDate}
+            description={post.frontmatter.description}
+          />
+        </>
       ))
     }
   </ul>

@@ -55,7 +55,10 @@ ul {
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5,
+h6 {
   font-family: "Grape Nuts", cursive;
   margin-bottom: 0;
 }
@@ -64,5 +67,9 @@ h3 {
 main {
   border-top: 1px solid var(--primary);
   border-bottom: 1px solid var(--primary);
+  margin: 0 0 1.2rem 0;
+}
+
+article h2 {
   margin: 0 0 1.2rem 0;
 }

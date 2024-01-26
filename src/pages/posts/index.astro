@@ -4,15 +4,24 @@ import BlogPost from "../../components/BlogPost.astro";
 const allPosts = await Astro.glob("./*.md");
 ---
 
-<BaseLayout title="Blog">
-  <h1>My Astro Learning Blog</h1>
-  <p>This is where I will post about my journey learning Astro.</p>
-
+<BaseLayout title="My Developer Journey">
+  <p>This is where I will post my musings.</p>
   <ul>
     {
       allPosts.map((post) => (
-        <BlogPost url={post.url} title={post.frontmatter.title} />
+        <BlogPost
+          url={post.url}
+          title={post.frontmatter.title}
+          pubDate={post.frontmatter.pubDate}
+          description={post.frontmatter.description}
+        />
       ))
     }
   </ul>
 </BaseLayout>
+
+<style>
+  ul {
+    padding: 0;
+  }
+</style>

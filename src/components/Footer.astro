@@ -1,7 +1,3 @@
----
-
----
-
 <footer>
   <p>
     <small> &copy; 2024 Larry LW Chan. All rights reserved. </small>
@@ -19,16 +15,6 @@
   </div>
 </footer>
 
-<script>
-  // Sets custom color for box-icons
-  const style = getComputedStyle(document.body);
-  const color = style.getPropertyValue("--color");
-  const boxIcons = document.querySelectorAll("box-icon");
-  boxIcons.forEach((boxIcon) => {
-    boxIcon.setAttribute("color", color);
-  });
-</script>
-
 <style>
   footer {
     display: flex;
@@ -39,5 +25,8 @@
   }
   footer .social a:hover {
     text-decoration: none;
+  }
+  footer .social a {
+    margin-left: 0.5rem;
   }
 </style>
