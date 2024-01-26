@@ -1,7 +1,19 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 import Tags from "../components/Tags.astro";
+
 const { frontmatter } = Astro.props;
+
+const dateOptions: object = {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
+
+const formattedDate = new Date(frontmatter.pubDate).toLocaleDateString(
+  "en-US",
+  dateOptions,
+);
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
@@ -9,7 +21,7 @@ const { frontmatter } = Astro.props;
     <h1>{frontmatter.title}</h1>
     <div class="date">
       <box-icon name="calendar-alt"></box-icon>
-      <span>{frontmatter.pubDate.slice(0, 10)}</span>
+      <span>{formattedDate}</span>
     </div>
   </div>
   <div class="post">
@@ -27,6 +39,7 @@ const { frontmatter } = Astro.props;
   }
   .date {
     margin-top: -1rem;
+    margin-bottom: 0.8rem;
   }
 
   h3 {

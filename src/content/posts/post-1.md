@@ -1,16 +1,13 @@
 ---
-layout: '../../layouts/PostLayout.astro'
-title: 'My First Blog Post'
-pubDate: 2022-07-01
+title: My First Blog Post
+author: Larry LW Chan
 description: 'This is the first post of my new Astro blog.'
-author: 'Larry LW Chan'
 image:
     url: 'https://docs.astro.build/assets/full-logo-light.png'
     alt: 'The full Astro logo.'
+pubDate: 2022-07-01
 tags: ["astro", "blogging", "learning in public"]
 ---
-
-
 Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
 
 ### What I've accomplished
