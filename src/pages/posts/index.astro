@@ -4,7 +4,8 @@ import BlogPost from "../../components/BlogPost.astro";
 const allPosts = await Astro.glob("./*.md");
 ---
 
-<BaseLayout title="My Developer Journey">
+<BaseLayout pageTitle="My Developer Journey">
+  <h1>Blogs</h1>
   <p>This is where I will post my musings.</p>
   <ul>
     {

@@ -4,11 +4,13 @@ import Tags from "../components/Tags.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<BaseLayout>
+<BaseLayout pageTitle={frontmatter.title}>
   <div class="frontmatter">
     <h1>{frontmatter.title}</h1>
-    <address>{frontmatter.author}</address>
-    <p>{frontmatter.pubDate.slice(0, 10)}</p>
+    <div class="date">
+      <box-icon name="calendar-alt"></box-icon>
+      <span>{frontmatter.pubDate.slice(0, 10)}</span>
+    </div>
   </div>
   <div class="post">
     <slot />
@@ -18,3 +20,16 @@ const { frontmatter } = Astro.props;
     <Tags tags={frontmatter.tags} />
   </div>
 </BaseLayout>
+
+<style>
+  .frontmatter h1 {
+    color: var(--primary);
+  }
+  .date {
+    margin-top: -1rem;
+  }
+
+  h3 {
+    margin-bottom: 0.3rem;
+  }
+</style>
