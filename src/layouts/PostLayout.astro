@@ -1,11 +1,12 @@
 ---
-import Base from "../layouts/Base.astro";
+import BaseLayout from "./BaseLayout.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<Base>
+<BaseLayout>
   <div class="frontmatter">
     <h1>{frontmatter.title}</h1>
+    <address>{frontmatter.author}</address>
     <p>{frontmatter.pubDate.slice(0, 10)}</p>
   </div>
   <div class="post">
@@ -23,7 +24,7 @@ const { frontmatter } = Astro.props;
       }
     </ul>
   </div>
-</Base>
+</BaseLayout>
 
 <style slot="head">
   .tags ul {

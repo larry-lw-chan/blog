@@ -1,5 +1,5 @@
 ---
-import Base from "../layouts/Base.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const identity = {
   firstName: "Larry LW Chan",
@@ -26,7 +26,7 @@ const goal = 3;
 const white = "#fff";
 ---
 
-<Base title="About">
+<BaseLayout title="About">
   <p>Here are a few facts about me:</p>
   <ul>
     <li>My name is {identity.firstName}.</li>
@@ -59,7 +59,7 @@ const white = "#fff";
       <p>My goal is not 3 days.</p>
     )
   }
-</Base>
+</BaseLayout>
 
 <style slot="head" define:vars={{ white }}>
   .skills {
