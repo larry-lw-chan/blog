@@ -11,9 +11,16 @@ const { pageTitle } = Astro.props;
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.json" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <slot name="meta">
+      <meta
+        name="description"
+        content="This is a blog by Larry LW Chan ranting about geeky developer things"
+      />
+    </slot>
   </head>
   <body>
     <div class="container">
@@ -28,8 +35,7 @@ const { pageTitle } = Astro.props;
       </main>
       <Footer />
     </div>
+    <script src="../assets/scripts/global.js"></script>
+    <script src="../assets/scripts/boxicons.js"></script>
   </body>
 </html>
-
-<script src="../assets/scripts/global.js"></script>
-<script src="../assets/scripts/boxicons.js"></script>

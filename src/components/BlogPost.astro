@@ -20,6 +20,9 @@ const formattedDate = new Date(pubDate).toLocaleDateString(
     <span>{formattedDate}</span>
   </div>
   <div class="description">{description}</div>
+  <div class="more">
+    <a href={url}>Read More</a>
+  </div>
 </li>
 
 <style>
@@ -28,7 +31,13 @@ const formattedDate = new Date(pubDate).toLocaleDateString(
     margin-bottom: 2rem;
   }
   h6 {
-    margin-bottom: 0;
     font-weight: 500;
+  }
+
+  .more {
+    font-weight: 900;
+    font-family: "Grape Nuts", cursive;
+    margin-top: 0.2rem;
+    text-align: right;
   }
 </style>

@@ -1,4 +1,5 @@
 ---
+import "../assets/styles/prism.css";
 import BaseLayout from "./BaseLayout.astro";
 import Tags from "../components/Tags.astro";
 
@@ -17,6 +18,8 @@ const formattedDate = new Date(frontmatter.pubDate).toLocaleDateString(
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
+  <meta name="description" content={frontmatter.description} slot="meta" />
+
   <div class="frontmatter">
     <h1>{frontmatter.title}</h1>
     <div class="date">
@@ -41,8 +44,6 @@ const formattedDate = new Date(frontmatter.pubDate).toLocaleDateString(
     margin-top: -1rem;
     margin-bottom: 0.8rem;
   }
-
-  h3 {
-    margin-bottom: 0.3rem;
-  }
 </style>
+
+<script src="../assets/scripts/prism.js"></script>
