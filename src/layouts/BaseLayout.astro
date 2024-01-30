@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../assets/styles/pico.min.css";
@@ -21,6 +22,7 @@ const { pageTitle } = Astro.props;
         content="This is a blog by Larry LW Chan ranting about geeky developer things"
       />
     </slot>
+    <ViewTransitions />
   </head>
   <body>
     <div class="container">
@@ -35,7 +37,8 @@ const { pageTitle } = Astro.props;
       </main>
       <Footer />
     </div>
-    <script src="../assets/scripts/global.js"></script>
-    <script src="../assets/scripts/boxicons.js"></script>
+    <script>
+      import "../assets/scripts/boxicons.js";
+    </script>
   </body>
 </html>

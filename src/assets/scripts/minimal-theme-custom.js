@@ -5,7 +5,6 @@ function toggleTheme() {
   
   // Add switching button functionality
   button.addEventListener("click", function () {
-    console.log("clicked");
     if (button.getAttribute("data-theme-switcher") === "light") {
       button.setAttribute("data-theme-switcher", "dark");
       button.textContent = light;
@@ -19,7 +18,20 @@ function toggleTheme() {
   const currentTheme = localStorage.getItem("picoPreferredColorScheme");
   currentTheme == "dark"
     ? (button.textContent = dark)
-    : (button.textContent = light);  
+    : (button.textContent = light);      
 }
 
-window.addEventListener("load", toggleTheme);
+function setBoxiconColor() {
+  const style = getComputedStyle(document.body);
+  const color = style.getPropertyValue("--color");
+  const boxIcons = document.querySelectorAll("box-icon");
+
+  boxIcons.forEach((boxIcon) => {
+    boxIcon.setAttribute("color", color);
+  });
+}
+
+document.addEventListener("astro:page-load", () => {
+  setBoxiconColor();
+  toggleTheme();
+});
