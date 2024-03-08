@@ -28,11 +28,14 @@ header:after {
 
 /* Navigation Styling */
 #primary-nav {
-  float: right;
+  display: none;
+  clear: both;
 }
 
 /* Hamburger Styling */
 .hamburger {
+  float: right;
+  right: 0;
   margin-top: 0.7rem;
 }
 
@@ -41,7 +44,7 @@ header:after {
 .hamburger .bar3 {
   width: 35px;
   height: 5px;
-  background-color: var(--primary-inverse);
+  background-color: var(--color);
   margin: 6px 0;
   transition: var(--transition-speed);
 }
@@ -62,9 +65,13 @@ header:after {
 }
 
 /* Navigation Link */
-.nav-links {
-  display: none;
-  margin: 0 4rem 0 0;
+header.change {
+  height: inherit;
+  transition: var(--transition-speed);
+}
+
+.change #primary-nav {
+  display: block;
 }
 
 .nav-links li {
@@ -82,34 +89,58 @@ header:after {
 
 /* Theme Switcher */
 #theme-switcher {
-  position: absolute;
-  right: 6rem;
-  margin-top: 0.7rem;
+  display: none;
+}
+
+#theme-switcher a {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.change #theme-switcher {
+  display: block;
+  text-align: center;
 }
 
 /* Media Query */
 @media screen and (min-width: 768px) {
+  header {
+    min-height: 3rem;
+    padding: 0.9rem 0;
+    position: relative;
+  }
+
+  #primary-nav {
+    float: right;
+    display: block;
+    clear: none;
+  }
+
   #theme-switcher {
     position: absolute;
     right: 0;
-    padding-top: 0.2rem;
+    padding-top: 1.2rem;
   }
 
   .hamburger {
-    display: none;
+    position: absolute;
+    top: -10rem;
   }
   .nav-links {
     display: flex;
     gap: 0 2.2rem;
     justify-content: center;
     padding-top: 0.7rem;
-    margin-right: 4rem;
+    margin: 0 4rem 0 0;
   }
 
   .nav-links li {
     font-size: 1.4rem;
   }
-  a[data-theme-switcher] {
-    right: 0;
+
+  #theme-switcher {
+    display: block;
+    margin-top: -0.2rem;
   }
 }
