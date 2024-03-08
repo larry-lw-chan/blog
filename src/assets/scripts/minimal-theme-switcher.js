@@ -82,8 +82,6 @@ const themeSwitcher = {
     },
   };
   
-  // Init
-  // themeSwitcher.init();
 
   // Listen for astro page load event
   document.addEventListener('astro:page-load', () => {
