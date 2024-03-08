@@ -33,7 +33,7 @@ header:after {
 
 /* Hamburger Styling */
 .hamburger {
-  margin-top: calc(var(--pico-block-spacing-vertical) * 4);
+  margin-top: 0.7rem;
 }
 
 .hamburger .bar1,
@@ -82,9 +82,9 @@ header:after {
 
 /* Theme Switcher */
 #theme-switcher {
-  float: right;
-  right: 9rem;
-  margin-top: 0.9rem;
+  position: absolute;
+  right: 6rem;
+  margin-top: 0.7rem;
 }
 
 /* Media Query */
