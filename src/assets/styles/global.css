@@ -37,6 +37,7 @@
   --form-element-focus-color: var(--primary-focus);
   --switch-color: var(--primary-inverse);
   --switch-checked-background-color: var(--primary);
+  --transition-speed: 0.3s;
 }
 
 address,

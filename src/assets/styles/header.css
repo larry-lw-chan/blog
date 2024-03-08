@@ -2,9 +2,6 @@
 header {
   min-height: 3rem;
   padding: 1rem 0;
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
   position: relative;
 }
 
@@ -18,12 +15,37 @@ header a h1:hover {
   position: absolute;
 }
 
-/* Dropdown Menu Styling */
-details[role="list"] li {
-  color: var(--primary);
+/* Hamburger Styling */
+.hamburger {
+  margin-top: calc(var(--pico-block-spacing-vertical) * 2);
 }
 
-/* Navigation Link Styling */
+.hamburger .bar1,
+.hamburger .bar2,
+.hamburger .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: var(--primary-inverse);
+  margin: 6px 0;
+  transition: var(--transition-speed);
+}
+
+/* Rotate first bar */
+.change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+
+/* Navigation Link */
 .nav-links {
   display: none;
   margin: 0 4rem 0 0;
@@ -48,11 +70,8 @@ a[data-theme-switcher] {
   top: 2rem;
 }
 
+/* Media Query */
 @media screen and (min-width: 768px) {
-  details[role="list"] {
-    display: none;
-  }
-
   .nav-links {
     margin-top: 0.6rem;
     display: flex;
