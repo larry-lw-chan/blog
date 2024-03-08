@@ -1,12 +1,11 @@
 // Hamburger Menu Toggle
-window.onload = function () {
+function toggleMenu() {
     document.getElementById("hamburger").addEventListener("click", function (e) {
       e.stopPropagation();
       const header = document.querySelector("header");
       header.classList.toggle("change");
     });
 }
-
 
 // Theme and Boxicons Toggle
 function toggleTheme() {
@@ -42,7 +41,9 @@ function toggleTheme() {
     });
   }
   
+  // Run functions on page load - (Made to work with Astro Transitions)
   document.addEventListener("astro:page-load", () => {
+    toggleMenu();
     setBoxiconColor();
     toggleTheme();
   });
