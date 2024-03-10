@@ -5,7 +5,7 @@ import Tags from "../components/Tags.astro";
 
 const { frontmatter } = Astro.props;
 
-const dateOptions: object = {
+const dateOptions: Intl.DateTimeFormatOptions = {
   year: "numeric",
   month: "long",
   day: "numeric",
